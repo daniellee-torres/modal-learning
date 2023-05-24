@@ -35,23 +35,16 @@
 
 {{--    Modal--}}
 
-    <div>
-        <div class="fixed inset-0 bg-gray-900 opacity-90"></div>
-        <div class="bg-white shadow-md p-4 h-48 max-w-sm m-auto rounded-md fixed inset-0">
-            <div class="flex flex-col h-full justify-between">
-                <header class="font-bold text-lg">
-                    <h3>Are you sure?</h3>
-                </header>
-
-                <main >
-                    <p>If you proceed, your account will be deleted entirely.</p>
-                </main>
-
-                <footer>
-                    <button class="bg-gray-400 text-xs uppercase py-2 px-4 rounded-md text-white hover:bg-gray-500 transition-all duration-200 mr-2">Cancel</button>
-                    <button class="bg-blue-400 text-xs uppercase py-2 px-4 rounded-md text-white hover:bg-blue-500 transition-all duration-200">Continue</button>
-                </footer>
-            </div>
-        </div>
-    </div>
+    <x-confirmation-modal>
+        <x-slot name="title">
+            Are You Sure?
+        </x-slot>
+        <x-slot name="body">
+            Continuing will delete your account permanently.
+        </x-slot>
+        <x-slot name="footer">
+            <x-button class="bg-gray-400 hover:bg-gray-500">Cancel</x-button>
+            <x-button class="bg-blue-400 hover:bg-blue-500">Continue</x-button>
+        </x-slot>
+    </x-confirmation-modal>
 </x-layout>
