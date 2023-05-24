@@ -3,8 +3,7 @@
         <x-button class="bg-blue-400 hover:bg-blue-500" wire:click="$set('showModal', true)">Yes, Delete</x-button>
     </p>
 
-    @if($showModal)
-        <x-confirmation-modal>
+        <x-confirmation-modal wire:model.defer="showModal">
             <x-slot name="title">
                 Are You Sure?
             </x-slot>
@@ -16,5 +15,4 @@
                 <x-button class="bg-blue-400 hover:bg-blue-500" wire:click="handle">Continue</x-button>
             </x-slot>
         </x-confirmation-modal>
-    @endif
 </form>
